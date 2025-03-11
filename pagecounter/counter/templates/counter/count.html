@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Count</title>
+</head>
+<body>
+    <h1>Page Access Count</h1>
+    <p>This page has been accessed {{ count }} times.</p>
+    <form action="{% url 'reset_count_view' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Reset counter</button>
+    </form>
+    
+    <form action="{% url 'double_count' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Double the counter</button>
+    </form>
+</body>
+</html>
